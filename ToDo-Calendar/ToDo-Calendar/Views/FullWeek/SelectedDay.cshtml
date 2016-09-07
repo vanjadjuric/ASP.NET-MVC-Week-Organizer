@@ -4,5 +4,28 @@
 }
 
 
-<div class="container day-header">MONDAY</div>
-<h1>@Model.id</h1>
+<div class="container day-header">TASKS FOR TODAY</div>
+@*<table class="table">
+    <tr>
+        <th>FILLER</th>
+        <th>FILLER</th>
+        <th>FILLER</th>
+    </tr>
+    @for (int i = 0; i < 7; i++)
+    {
+        <tr>
+            <td>Filler</td>
+            <td>Filler</td>
+            <td>Filler</td>
+        </tr>
+    }
+   
+   
+</table>*@
+<div class="notes-container">
+    @for (int i = 0; i < 15; i++)
+    {
+        <div class="notes">-FILLER TEXT <br />-FILLER TEXT <br />-FILLER TEXT <br />-FILLER TEXT <br /></div>
+    }
+</div>
+<div class="content"><a class="go-back" href="@Url.Action("Index", "Home")">GO BACK</a></div>

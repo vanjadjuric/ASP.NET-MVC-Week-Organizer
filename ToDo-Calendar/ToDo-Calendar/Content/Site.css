@@ -71,4 +71,37 @@ a:focus
 .container.day-header
 {
     font-size:70px;
+    margin-bottom:20px;
+}
+.go-back
+{
+    font-size:35px;
+    font-family: 'Oswald', sans-serif;
+    margin-left:15px;
+}
+.table td, th
+{
+    color:white;
+}
+.table
+{
+    margin-top:50px;
+}
+.notes
+{
+    width:180px;
+    height:180px;
+    color:white;
+    background-color:#7DA3A1;
+    margin:15px;
+    display:inline-block;
+    text-align:left;
+    padding:5px;
+    font-family: 'Oswald', sans-serif;
+}
+.notes-container
+{
+    width:100%;
+   
+    
 }
