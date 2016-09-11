@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo-Calendar", "ToDo-Calendar\ToDo-Calendar.csproj", "{5B7E8BCE-FD69-45C6-A0AF-AC66D151A4B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo-Calendar.Data", "ToDo-Calendar.Data\ToDo-Calendar.Data.csproj", "{3BF7383D-A9B3-4D5B-9717-34BF84D40196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo-Calendar.Business", "ToDo-Calendar.Business\ToDo-Calendar.Business.csproj", "{9AED96E9-5D17-4F4E-8B7F-EC6DA06AFF1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5B7E8BCE-FD69-45C6-A0AF-AC66D151A4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B7E8BCE-FD69-45C6-A0AF-AC66D151A4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B7E8BCE-FD69-45C6-A0AF-AC66D151A4B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BF7383D-A9B3-4D5B-9717-34BF84D40196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF7383D-A9B3-4D5B-9717-34BF84D40196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF7383D-A9B3-4D5B-9717-34BF84D40196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF7383D-A9B3-4D5B-9717-34BF84D40196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AED96E9-5D17-4F4E-8B7F-EC6DA06AFF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AED96E9-5D17-4F4E-8B7F-EC6DA06AFF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AED96E9-5D17-4F4E-8B7F-EC6DA06AFF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AED96E9-5D17-4F4E-8B7F-EC6DA06AFF1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

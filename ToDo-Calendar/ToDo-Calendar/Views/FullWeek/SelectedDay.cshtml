@@ -1,31 +1,31 @@
-﻿@model ToDo_Calendar.Models.DayModel
+﻿@model IEnumerable<ToDo_Calendar.Models.TasksModel>
 @{
     ViewBag.Title = "SelectedDay";
 }
+<body>
+    <div class="container day-header">
+        <div>TASKS FOR THIS DAY</div>
+        <div id="new-task"><a href="@Url.Action("SelectedTask", "FullWeek")">| NEW TASK</a></div>
+    </div>
 
 
-<div class="container day-header">TASKS FOR TODAY</div>
-@*<table class="table">
-    <tr>
-        <th>FILLER</th>
-        <th>FILLER</th>
-        <th>FILLER</th>
-    </tr>
-    @for (int i = 0; i < 7; i++)
-    {
-        <tr>
-            <td>Filler</td>
-            <td>Filler</td>
-            <td>Filler</td>
-        </tr>
-    }
-   
-   
-</table>*@
-<div class="notes-container">
-    @for (int i = 0; i < 15; i++)
-    {
-        <div class="notes">-FILLER TEXT <br />-FILLER TEXT <br />-FILLER TEXT <br />-FILLER TEXT <br /></div>
-    }
-</div>
-<div class="content"><a class="go-back" href="@Url.Action("Index", "Home")">GO BACK</a></div>
+
+    <div class="notes-container">
+        @foreach (var item in Model)
+        {
+            <div class="notes">
+                <div class="notes-title">Title...</div>
+                <br /><br />
+                <div class="notes-text">@item.TaskText</div>
+                <div class="notes-nav">
+                    <br /><br />
+                    <a class="edit-task" href="@Url.Action("Index", "Home")">Edit <span id="line">|</span></a>                  
+                    <a class="delete-task" href="@Url.Action("Index", "Home")">Delete</a>
+                </div>
+            </div>
+
+        }
+
+    </div>
+    <div class="content" id="go-back"><a class="go-back" href="@Url.Action("Index", "Home")">| GO BACK</a></div>
+</body>

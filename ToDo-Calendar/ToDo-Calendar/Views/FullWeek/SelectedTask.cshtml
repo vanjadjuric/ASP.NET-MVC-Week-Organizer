@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "SelectedTask";
+}
+<body>
+
+    <div class="container day-header">
+        <div>CREATE NEW TASK</div>
+    </div>
+    <div id="form-container">
+        <form id="new-task-form">
+            @*<label>TASK NAME </label>*@<br />
+            <input id="task-name-text" type="text" value="" placeholder="Enter task name here..."/> <br />
+            @*<label class="new-task-label">TASK TEXT&nbsp;&nbsp;&nbsp;</label>*@<br />         
+            <textarea id="task-text-box" placeholder="Enter task information here..."></textarea>         
+        </form>
+    </div>
+    <div class="content" id="go-back"><a class="go-back" href="@Url.Action("Index", "Home")">| GO BACK </a><a class="add-task" href="@Url.Action("Index", "Home")">| ADD THIS TASK</a></div>
+</body>

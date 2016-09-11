@@ -1,12 +1,12 @@
-﻿html
-{
-    background-color:#2a3132;
+﻿html {
+    background-color: #2a3132;
 }
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:#2a3132;
-    height:100vh;
+    background-color: #2a3132;
+    height: 100vh;
 }
 
 
@@ -27,81 +27,202 @@ body {
 input,
 select,
 textarea {
-    max-width: 280px;
 }
-.container
-{
-    width:100%;
-    height:75px;
-    margin-left:0px;
-    font-size:35px;
-    color:#7DA3A1;
+
+.container {
+    width: 100%;
+    height: 75px;
+    margin-left: 0px;
+    font-size: 35px;
+    color: #7DA3A1;
     font-family: 'Oswald', sans-serif;
 }
-.medium.material-icons
-{   
-  font-size:250px;
-  color:white;
-    
+
+.medium.material-icons {
+    font-size: 250px;
+    color: white;
 }
-.icon
-{
-  position:absolute;
-  margin-top:-550px;
-  margin-left:1000px;
-  text-align:center;
-  float:right;
-  height:300px;
-  width:300px;
+
+.icon {
+    position: absolute;
+    margin-top: -550px;
+    margin-left: 1000px;
+    text-align: center;
+    float: right;
+    height: 300px;
+    width: 300px;
 }
-a
-{
-     color:#7DA3A1;
+
+a {
+    color: #7DA3A1;
 }
-a:hover
-{
-    text-decoration:none;
-    color:white;
+
+    a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:focus {
+        text-decoration: none;
+        color: #7DA3A1;
+    }
+
+.container.day-header {
+    font-size: 70px;
+    margin-bottom: 20px;
+    display: inline-block;
+    float: left;
+    height: 120px;
 }
-a:focus
-{
-    text-decoration:none;
-    color:#7DA3A1;
+
+#new-task a {
+    float: right;
+    font-size: 30px;
+    padding: 0px;
+    margin-right: -110px;
+    color: white;
 }
-.container.day-header
-{
-    font-size:70px;
-    margin-bottom:20px;
-}
-.go-back
-{
-    font-size:35px;
+
+    #new-task a:hover {
+        color: #7DA3A1;
+    }
+
+.go-back {
+    font-size: 35px;
     font-family: 'Oswald', sans-serif;
-    margin-left:15px;
+    margin-left: 15px;
+    clear: both;
 }
-.table td, th
+.add-task
 {
-    color:white;
+     font-size: 35px;
+     font-family: 'Oswald', sans-serif;
+     margin-left: 15px;
+     clear: both;
 }
-.table
+#add-task
 {
-    margin-top:50px;
+
 }
-.notes
-{
-    width:180px;
-    height:180px;
-    color:white;
-    background-color:#7DA3A1;
-    margin:15px;
-    display:inline-block;
-    text-align:left;
-    padding:5px;
+#go-back {
+    position: absolute;
+    margin-top: 30px;
+}
+
+.table td, th {
+    color: white;
+}
+
+.table {
+    margin-top: 50px;
+}
+
+.notes {
+    width: 180px;
+    height: 180px;
+    color: white;
+    background-color: #7DA3A1;
+    margin: 15px;
+    display: inline-block;
+    text-align: left;
+    padding: 5px;
+    font-family: 'Oswald', sans-serif;
+    transition: width 1s, height 1s;
+    overflow: hidden;
+    word-wrap: break-word;
+    font-size: 13px;
+}
+
+.notes-container {
+    width: 100%;
+    overflow: auto;
+    height: 480px;
+}
+
+.logo-text {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    font-size: 45px;
+    margin-left: 850px;
+    font-weight: 500;
+    margin-top: -527px;
+    text-align: right;
+}
+
+.notes:hover {
+    width: 220px;
+    height: 220px;
+    background-color: #2a3132;
+}
+
+    .notes:hover > .notes-text {
+        visibility: visible;
+    }
+
+    .notes:hover > .notes-title {
+        visibility: hidden;
+    }
+
+    .notes:hover > #line {
+        color: white;
+    }
+
+#line {
+    color: #7DA3A1;
+}
+
+.notes-text {
+    visibility: hidden;
+    position: relative;
+    font-size: 16px;
+}
+
+.notes-title {
+    font-size: 23px;
+}
+
+#form-container {
+    width: 100%;
+    clear: both;
+}
+
+#new-task-form {
+    clear: both;
+    margin-left: 15px;
+    font-size: 20px;
+    color:  #7DA3A1;
     font-family: 'Oswald', sans-serif;
 }
-.notes-container
+
+.new-task-label {
+    margin-top: 15px;
+}
+
+#task-text-box {
+    width: 400px;
+    height: 200px;
+    color:white;
+    background-color:#2a3132;
+    border:none;
+    outline:none;
+    resize:none;
+    border-bottom:2px solid white;
+}
+textarea:focus
 {
-    width:100%;
-   
-    
+    border:none;
+    outline:none;
+}
+#task-name-text
+{
+    width:300px;
+    color:white;
+    background-color:#2a3132;
+    border:none;
+    outline:none;
+    resize:none;
+    border-bottom:2px solid white;
 }
