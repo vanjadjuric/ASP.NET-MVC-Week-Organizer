@@ -9,7 +9,7 @@ namespace ToDo_Calendar.DataAccess.Interfaces
 {
     public interface ITasks
     {
-        void SelectAll();
+        List<TasksModel> SelectAll(int SelectedDayID);
         void Insert(TasksModel obj);
         void Update(TasksModel obj);
         void Delete(int id);

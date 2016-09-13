@@ -5,13 +5,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToDo_Calendar.Connection;
 
 namespace ToDo_Calendar.Data.Classes
 {
     public class SqlExecuteMethods
     {
-        private SqlConnection conn;
 
+        SqlConnection _con;
+
+        public SqlExecuteMethods(SqlConnection con)
+        {
+            _con = con;
+        }
 
         public SqlDataReader ExecuteReader(CommandType type, string CommandText, SqlParameter[] pars)
         {
@@ -19,7 +25,7 @@ namespace ToDo_Calendar.Data.Classes
             {
                 CommandType = type,
                 CommandText = CommandText,
-                Connection = conn
+                Connection = _con
             };
 
             comm.Parameters.AddRange(pars);
@@ -33,7 +39,7 @@ namespace ToDo_Calendar.Data.Classes
             {
                 CommandType = type,
                 CommandText = CommandText,
-                Connection = conn
+                Connection = _con
             };
             comm.Parameters.AddRange(pars);
             return comm.ExecuteScalar();

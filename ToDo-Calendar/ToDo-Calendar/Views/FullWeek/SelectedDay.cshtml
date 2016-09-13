@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<ToDo_Calendar.Models.TasksModel>
 @{
     ViewBag.Title = "SelectedDay";
+    
 }
 <body>
     <div class="container day-header">
         <div>TASKS FOR THIS DAY</div>
+        <div class="content" id="go-back"><a class="go-back" href="@Url.Action("Index", "Home")">| GO BACK</a></div>
         <div id="new-task"><a href="@Url.Action("SelectedTask", "FullWeek")">| NEW TASK</a></div>
     </div>
 
@@ -13,8 +15,9 @@
     <div class="notes-container">
         @foreach (var item in Model)
         {
+           
             <div class="notes">
-                <div class="notes-title">Title...</div>
+                <div class="notes-title">@item.TaskTitle</div>
                 <br /><br />
                 <div class="notes-text">@item.TaskText</div>
                 <div class="notes-nav">
@@ -27,5 +30,5 @@
         }
 
     </div>
-    <div class="content" id="go-back"><a class="go-back" href="@Url.Action("Index", "Home")">| GO BACK</a></div>
+    
 </body>

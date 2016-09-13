@@ -40,16 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\SqlExecuteMethods.cs" />
-    <Compile Include="Classes\TasksSQL.cs" />
-    <Compile Include="Interfaces\ITasks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ToDo-Calendar\ToDo-Calendar.csproj">
-      <Project>{5B7E8BCE-FD69-45C6-A0AF-AC66D151A4B9}</Project>
-      <Name>ToDo-Calendar</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

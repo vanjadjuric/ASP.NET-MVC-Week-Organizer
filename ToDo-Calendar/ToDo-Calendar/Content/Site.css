@@ -39,8 +39,8 @@ textarea {
 }
 
 .medium.material-icons {
-    font-size: 250px;
-    color: white;
+    font-size: 200px;
+    color: #7DA3A1;
 }
 
 .icon {
@@ -88,7 +88,7 @@ a {
     }
 
 .go-back {
-    font-size: 35px;
+    font-size: 30px;
     font-family: 'Oswald', sans-serif;
     margin-left: 15px;
     clear: both;
@@ -99,14 +99,18 @@ a {
      font-family: 'Oswald', sans-serif;
      margin-left: 15px;
      clear: both;
+     border:none;
+     color:#7DA3A1;
+     background-color:#2a3132;
 }
-#add-task
+.add-task:hover
 {
-
+    color:white;
 }
 #go-back {
     position: absolute;
-    margin-top: 30px;
+    margin-top:-48px;
+    margin-left:975px;
 }
 
 .table td, th {
@@ -121,7 +125,8 @@ a {
     width: 180px;
     height: 180px;
     color: white;
-    background-color: #7DA3A1;
+    background-color: #2a3132;
+    border: 3px solid #7DA3A1;
     margin: 15px;
     display: inline-block;
     text-align: left;
@@ -131,7 +136,9 @@ a {
     overflow: hidden;
     word-wrap: break-word;
     font-size: 13px;
+    font-weight:100;
 }
+
 
 .notes-container {
     width: 100%;
@@ -140,15 +147,15 @@ a {
 }
 
 .logo-text {
-    color: white;
+    color: #7DA3A1;
     font-family: 'Oswald', sans-serif;
     position: absolute;
     width: 200px;
     height: 200px;
-    font-size: 45px;
+    font-size: 40px;
     margin-left: 850px;
     font-weight: 500;
-    margin-top: -527px;
+    margin-top: -505px;
     text-align: right;
 }
 
@@ -159,11 +166,11 @@ a {
 }
 
     .notes:hover > .notes-text {
-        visibility: visible;
+        opacity:10;
     }
 
     .notes:hover > .notes-title {
-        visibility: hidden;
+        opacity:0.2;
     }
 
     .notes:hover > #line {
@@ -175,14 +182,17 @@ a {
 }
 
 .notes-text {
-    visibility: hidden;
+    transition: opacity 2s;
+    opacity:0;
     position: relative;
     font-size: 16px;
 }
 
 .notes-title {
     font-size: 23px;
+    transition: opacity 2s;
 }
+
 
 #form-container {
     width: 100%;
