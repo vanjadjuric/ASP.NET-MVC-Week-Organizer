@@ -48,13 +48,14 @@ namespace ToDo_Calendar.Controllers
             return RedirectToAction("SelectedDay", new { id = selectedDayID });
 
         }
-        public ActionResult DeleteTask()
+        public ActionResult DeleteTask(int id)
         {
+            TasksBusiness tb = new TasksBusiness();
+            tb.Delete(id);
+            int selectedDayID = Convert.ToInt32(TempData["SelectedDayID"]);
 
 
-
-
-            return RedirectToAction("Index");
+            return RedirectToAction("SelectedDay", new { id = selectedDayID });
         }
     }
 }

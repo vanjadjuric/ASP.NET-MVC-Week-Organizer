@@ -63,7 +63,20 @@ namespace ToDo_Calendar.Business.Classes
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Open();
+                TasksDataLayer.Delete(id);
+            }
+            catch 
+            {
+
+                throw;
+            }
+            finally
+            {
+                Close();
+            }
         }
     }
 }

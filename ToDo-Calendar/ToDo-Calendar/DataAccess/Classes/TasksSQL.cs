@@ -24,7 +24,7 @@ namespace ToDo_Calendar.DataAccess.Classes
             try
             {
                 List<TasksModel> TasksList = new List<TasksModel>();
-                SqlDataReader dr = ExecuteReader(CommandType.Text, "Select t.TaskTitle, t.TaskText, t.TaskDaysID, td.TaskDay from Task as t" +
+                SqlDataReader dr = ExecuteReader(CommandType.Text, "Select t.TaskTitle, t.TaskText, t.TaskDaysID,t.TaskID, td.TaskDay from Task as t" +
                     " inner join TaskDays as td on t.TaskDaysID=td.TaskDaysID where t.TaskDaysID=@TaskDaysID", new SqlParameter[1]
                     {
                         new SqlParameter("@TaskDaysID",SelectedDayID)
@@ -34,6 +34,7 @@ namespace ToDo_Calendar.DataAccess.Classes
                     TasksModel task = new TasksModel();
                     task.TaskTitle = dr["TaskTitle"].ToString();
                     task.TaskText = dr["TaskText"].ToString();
+                    task.TaskID = Convert.ToInt32(dr["TaskID"].ToString());
                     TasksList.Add(task);                   
                 }
                 return TasksList;              

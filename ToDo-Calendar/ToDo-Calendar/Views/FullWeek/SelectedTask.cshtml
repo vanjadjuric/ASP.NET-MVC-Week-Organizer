@@ -11,13 +11,13 @@
         
         <div id="form-container">
             <div id="new-task-form">
-                <input id="task-name-text" type="text" name="obj.TaskTitle" placeholder="Enter task name here..." />
+                <input id="task-name-text" type="text" name="obj.TaskTitle" maxlength="20" placeholder="Enter task name here..." />
                 <br />
                 <br />
-                <textarea id="task-text-box" name="obj.TaskText" placeholder="Enter task information here..."></textarea>
+                <textarea id="task-text-box" name="obj.TaskText" maxlength="150" placeholder="Enter task information here..."></textarea>
             </div>
         </div>
-        <div class="content" id="go-back">
+        <div class="content" >
 
             <a class="go-back" href="@Url.Action("BackToSelectedDay", "FullWeek")">| GO BACK </a>
             <button type="submit" class="add-task">| ADD THIS TASK</button>
