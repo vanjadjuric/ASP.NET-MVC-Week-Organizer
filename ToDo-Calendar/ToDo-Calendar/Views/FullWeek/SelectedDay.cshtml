@@ -22,7 +22,7 @@
                 <div class="notes-text">@item.TaskText</div>
                 <div class="notes-nav">
                     <br /><br />
-                    <a class="edit-task" href="@Url.Action("Index", "Home")">Edit <span id="line">|</span></a>                  
+                    <a class="edit-task" href="@Url.Action("EditSelectedTask", "FullWeek",new { id = item.TaskID })">Edit <span id="line">|</span></a>                  
                     <a class="delete-task" href="@Url.Action("DeleteTask", "FullWeek",new { id = item.TaskID })">Delete</a>
                 </div>
             </div>

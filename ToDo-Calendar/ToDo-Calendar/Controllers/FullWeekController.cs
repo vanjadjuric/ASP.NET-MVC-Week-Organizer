@@ -57,5 +57,11 @@ namespace ToDo_Calendar.Controllers
 
             return RedirectToAction("SelectedDay", new { id = selectedDayID });
         }
+        public ActionResult EditSelectedTask(int id)
+        {
+            TasksBusiness task = new TasksBusiness();
+            
+            return View(task.SelectSingle(id));
+        }
     }
 }

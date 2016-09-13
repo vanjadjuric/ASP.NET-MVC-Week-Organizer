@@ -280,6 +280,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\FullWeek\SelectedDay.cshtml" />
     <Content Include="Views\FullWeek\SelectedTask.cshtml" />
+    <Content Include="Views\FullWeek\EditSelectedTask.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

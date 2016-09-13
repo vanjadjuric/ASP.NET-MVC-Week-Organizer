@@ -37,6 +37,24 @@ namespace ToDo_Calendar.Business.Classes
                 Close();
             }
         }
+        public TasksModel SelectSingle(int SelectedTaskID)
+        {
+            try
+            {
+                Open();
+                return TasksDataLayer.SelectSingle(SelectedTaskID);
+
+            }
+            catch 
+            {
+
+                throw;
+            }
+            finally
+            {
+                Close();
+            }
+        }
 
         public void Insert(TasksModel obj)
         {

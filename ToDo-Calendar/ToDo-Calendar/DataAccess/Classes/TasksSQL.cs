@@ -45,6 +45,24 @@ namespace ToDo_Calendar.DataAccess.Classes
                 throw;
             }
         }
+        public TasksModel SelectSingle(int SelectedTaskID)
+        {
+            TasksModel task = new TasksModel();
+            SqlDataReader dr = ExecuteReader(CommandType.Text, "Select TaskTitle, TaskText, TaskDaysID,TaskID from Task" +
+                     " where TaskID=@TaskID", new SqlParameter[1]
+                     {
+                        new SqlParameter("@TaskID",SelectedTaskID)
+                     });
+            while (dr.Read())
+            {
+               
+                task.TaskTitle = dr["TaskTitle"].ToString();
+                task.TaskText = dr["TaskText"].ToString();
+                task.TaskID = Convert.ToInt32(dr["TaskID"].ToString());
+               
+            }
+            return task;
+        }
 
         public void Insert(TasksModel obj)
         {
