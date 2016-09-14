@@ -7,21 +7,21 @@
     <div>EDIT SELECTED TASK</div>
 </div>
 
-@using (Html.BeginForm("", "FullWeek"))
+@using (Html.BeginForm("InsertEditedTask", "FullWeek"))
 {
 
     <div id="form-container">
         <div id="edit-task-form">
-            <input id="task-name-text" type="text" name="obj.TaskTitle" maxlength="20" value="@Model.TaskTitle" />
+            <input id="task-name-text" type="text" name="obj.TaskTitle" maxlength="20" autocomplete="off" value="@Model.TaskTitle" />
             <br />
             <br />
-            <input id="task-text-box" name="obj.TaskText" maxlength="150" value="@Model.TaskText" wrap="true" />
+            <input id="task-text-box" name="obj.TaskText" maxlength="150" value="@Model.TaskText" autocomplete="off" wrap="true" />
         </div>
     </div>
         <div class="content" id="edit-navigation">
 
             <a class="go-back"  href="@Url.Action("BackToSelectedDay", "FullWeek")">| GO BACK </a>
-            <button type="submit" class="add-task">| ADD THIS TASK</button>
+            <button type="submit" class="add-task">| SAVE CHANGES</button>
 
         </div>
 }

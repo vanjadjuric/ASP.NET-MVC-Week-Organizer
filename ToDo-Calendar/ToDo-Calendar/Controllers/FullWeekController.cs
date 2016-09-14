@@ -60,8 +60,19 @@ namespace ToDo_Calendar.Controllers
         public ActionResult EditSelectedTask(int id)
         {
             TasksBusiness task = new TasksBusiness();
-            
+            TempData["SelectedTaskID"] = id;
             return View(task.SelectSingle(id));
+        }
+        public ActionResult InsertEditedTask(TasksModel obj)
+        {
+            TasksBusiness task = new TasksBusiness();
+            int selectedDayID = Convert.ToInt32(TempData["SelectedDayID"]);
+            //obj.TaskDaysID = Convert.ToInt32(TempData["SelectedDayID"]);
+            obj.TaskID = Convert.ToInt32(TempData["SelectedTaskID"]);
+            task.Update(obj);
+           
+
+            return RedirectToAction("SelectedDay", new { id = selectedDayID });
         }
     }
 }

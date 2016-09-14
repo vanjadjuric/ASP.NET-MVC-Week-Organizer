@@ -63,6 +63,7 @@ namespace ToDo_Calendar.DataAccess.Classes
             }
             return task;
         }
+       
 
         public void Insert(TasksModel obj)
         {
@@ -88,13 +89,12 @@ namespace ToDo_Calendar.DataAccess.Classes
         {
             try
             {
-                ExecuteScalar(CommandType.Text, "Update Task set TaskTitle=@TaskTitle,TaskText=@TaskText,TaskDaysID=@TaskDayID where TaskID=@TaskID",
-                    new SqlParameter[4]
+                ExecuteScalar(CommandType.Text, "Update Task set TaskTitle=@TaskTitle,TaskText=@TaskText where TaskID=@TaskID",
+                    new SqlParameter[3]
                     {
                          new SqlParameter("@TaskTitle",obj.TaskTitle),
                          new SqlParameter("@TaskID",obj.TaskID),
-                         new SqlParameter("@TaskText",obj.TaskText),
-                         new SqlParameter("@TaskDaysID", obj.TaskDaysID)
+                         new SqlParameter("@TaskText",obj.TaskText),                      
                     });
 
             }

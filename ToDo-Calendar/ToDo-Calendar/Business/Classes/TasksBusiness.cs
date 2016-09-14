@@ -76,7 +76,21 @@ namespace ToDo_Calendar.Business.Classes
 
         public void Update(TasksModel obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Open();
+                TasksDataLayer.Update(obj);
+
+            }
+            catch 
+            {
+
+                throw;
+            }
+            finally
+            {
+                Close();
+            }
         }
 
         public void Delete(int id)
