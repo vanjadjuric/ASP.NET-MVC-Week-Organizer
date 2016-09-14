@@ -24,6 +24,7 @@ namespace ToDo_Calendar.Controllers
             List<TasksModel> TaskList;
             TaskList = SelectTasks.SelectAll(id);
             TempData["SelectedDayID"] = id;
+
             return View(TaskList);
         }
         public ActionResult SelectedTask()
@@ -35,7 +36,7 @@ namespace ToDo_Calendar.Controllers
         {
             int selectedDayID = Convert.ToInt32(TempData["SelectedDayID"]);
             TasksBusiness insertTask = new TasksBusiness();          
-            obj.TaskDaysID = selectedDayID;
+            obj.TaskDaysID = selectedDayID;        
             insertTask.Insert(obj);
             
             return RedirectToAction("SelectedDay",new { id = selectedDayID });
@@ -61,13 +62,13 @@ namespace ToDo_Calendar.Controllers
         {
             TasksBusiness task = new TasksBusiness();
             TempData["SelectedTaskID"] = id;
+
             return View(task.SelectSingle(id));
         }
         public ActionResult InsertEditedTask(TasksModel obj)
         {
             TasksBusiness task = new TasksBusiness();
-            int selectedDayID = Convert.ToInt32(TempData["SelectedDayID"]);
-            //obj.TaskDaysID = Convert.ToInt32(TempData["SelectedDayID"]);
+            int selectedDayID = Convert.ToInt32(TempData["SelectedDayID"]);       
             obj.TaskID = Convert.ToInt32(TempData["SelectedTaskID"]);
             task.Update(obj);
            

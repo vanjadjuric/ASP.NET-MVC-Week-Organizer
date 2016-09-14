@@ -12,10 +12,10 @@
 
     <div id="form-container">
         <div id="edit-task-form">
-            <input id="task-name-text" type="text" name="obj.TaskTitle" maxlength="20" autocomplete="off" value="@Model.TaskTitle" />
+            <input id="task-name-text" type="text" name="obj.TaskTitle" maxlength="20" required autocomplete="off" value="@Model.TaskTitle" />
             <br />
             <br />
-            <input id="task-text-box" name="obj.TaskText" maxlength="150" value="@Model.TaskText" autocomplete="off" wrap="true" />
+            <input id="task-text-box" name="obj.TaskText" maxlength="150" required value="@Model.TaskText" autocomplete="off" wrap="true" />
         </div>
     </div>
         <div class="content" id="edit-navigation">

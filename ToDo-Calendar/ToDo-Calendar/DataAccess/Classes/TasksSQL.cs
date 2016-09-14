@@ -24,8 +24,7 @@ namespace ToDo_Calendar.DataAccess.Classes
             try
             {
                 List<TasksModel> TasksList = new List<TasksModel>();
-                SqlDataReader dr = ExecuteReader(CommandType.Text, "Select t.TaskTitle, t.TaskText, t.TaskDaysID,t.TaskID, td.TaskDay from Task as t" +
-                    " inner join TaskDays as td on t.TaskDaysID=td.TaskDaysID where t.TaskDaysID=@TaskDaysID", new SqlParameter[1]
+                SqlDataReader dr = ExecuteReader(CommandType.StoredProcedure, @"SP_SelectAllTasks", new SqlParameter[1]
                     {
                         new SqlParameter("@TaskDaysID",SelectedDayID)
                     });
@@ -48,8 +47,7 @@ namespace ToDo_Calendar.DataAccess.Classes
         public TasksModel SelectSingle(int SelectedTaskID)
         {
             TasksModel task = new TasksModel();
-            SqlDataReader dr = ExecuteReader(CommandType.Text, "Select TaskTitle, TaskText, TaskDaysID,TaskID from Task" +
-                     " where TaskID=@TaskID", new SqlParameter[1]
+            SqlDataReader dr = ExecuteReader(CommandType.StoredProcedure, @"SP_SelectSingleTask", new SqlParameter[1]
                      {
                         new SqlParameter("@TaskID",SelectedTaskID)
                      });
@@ -64,12 +62,11 @@ namespace ToDo_Calendar.DataAccess.Classes
             return task;
         }
        
-
         public void Insert(TasksModel obj)
         {
             try
             {
-                ExecuteScalar(CommandType.Text, "Insert into Task values(@TaskText,@TaskDayID,@TaskTitle)",
+                ExecuteScalar(CommandType.StoredProcedure, @"SP_InsertTask",
                     new SqlParameter[3]
                     {
                          new SqlParameter("@TaskTitle",obj.TaskTitle),
@@ -89,7 +86,7 @@ namespace ToDo_Calendar.DataAccess.Classes
         {
             try
             {
-                ExecuteScalar(CommandType.Text, "Update Task set TaskTitle=@TaskTitle,TaskText=@TaskText where TaskID=@TaskID",
+                ExecuteScalar(CommandType.StoredProcedure, @"SP_UpdateTask",
                     new SqlParameter[3]
                     {
                          new SqlParameter("@TaskTitle",obj.TaskTitle),
@@ -109,7 +106,7 @@ namespace ToDo_Calendar.DataAccess.Classes
         {
             try
             {
-                ExecuteScalar(CommandType.Text, "Delete from Task where TaskID=@TaskID",
+                ExecuteScalar(CommandType.StoredProcedure, @"SP_DeleteTask",
                     new SqlParameter[1]
                     {
                         new SqlParameter("@TaskID",id)
